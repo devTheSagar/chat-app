@@ -52,10 +52,12 @@ class AdminsController extends Controller
             return $chat;
         })->unique('user_id')->values();
     
+        $users = User::all(); // Fetch all users
         // Pass the logged-in admin's information and chats to the view
         return view('admin.chats', [
             'LoggedAdminInfo' => $LoggedAdminInfo,
-            'chats' => $allChats
+            'chats' => $allChats,
+            'users' => $users
         ]);
     }
     
