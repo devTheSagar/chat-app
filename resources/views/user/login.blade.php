@@ -33,7 +33,8 @@
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
                                 <img src="/images/logo.svg" alt="logo">
-                            </div> @if (session('success'))
+                            </div>
+                            @if (session('success'))
                                 <div class="alert alert-success">
                                     {{ session('success') }}
                                 </div>
@@ -65,13 +66,13 @@
 
 
                             <div class="text-center mt-4 font-weight-light">
-    Don't have an account? <a href="/user/register" class="text-primary">Create</a>
-</div>
-<div class="text-center mt-2">
-    <a   class="text-primary">
-        <i class="fas fa-lock"></i> Forgot Password?
-    </a>
-</div>
+                                Don't have an account? <a href="/user/register" class="text-primary">Create</a>
+                            </div>
+                            <div class="text-center mt-2">
+                                <a class="text-primary">
+                                    <i class="fas fa-lock"></i> Forgot Password?
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -87,7 +88,7 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/vendors/js/vendor.bundle.base.js"></script>

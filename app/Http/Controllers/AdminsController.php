@@ -12,26 +12,29 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminsController extends Controller
 {
-    public function register() {
+    public function register()
+    {
         return view("admin.register");
     }
-    public function login() {
+    public function login()
+    {
         return view("admin.login");
-    }public function chats()
+    }
+    public function chats()
     {
         $LoggedAdminInfo = Admin::find(session('LoggedAdminInfo'));
         if (!$LoggedAdminInfo) {
             return redirect()->route('admin.login')->with('fail', 'You must be logged in to access the dashboard');
         }
-    
+
         // Fetch chats where the admin is either the sender or the receiver
         $chats = Chat::with(['senderProfilee', 'receiverProfilee', 'senderSellerProfile', 'receiverSellerProfile'])
             ->where('sender_id', $LoggedAdminInfo->id)
             ->orWhere('receiver_id', $LoggedAdminInfo->id)
             ->get();
-    
+
         // Combine both results and remove duplicates
-        $allChats = $chats->map(function($chat) use ($LoggedAdminInfo) {
+        $allChats = $chats->map(function ($chat) use ($LoggedAdminInfo) {
             if ($chat->sender_id == $LoggedAdminInfo->id) {
                 if ($chat->receiverProfilee) {
                     $chat->user_id = $chat->receiver_id;
@@ -51,7 +54,7 @@ class AdminsController extends Controller
             }
             return $chat;
         })->unique('user_id')->values();
-    
+
         $users = User::all(); // Fetch all users
         // Pass the logged-in admin's information and chats to the view
         return view('admin.chats', [
@@ -60,10 +63,9 @@ class AdminsController extends Controller
             'users' => $users
         ]);
     }
-    
-     
-    
-    
+
+
+
     public function dashboard()
     {
         $adminId = session('LoggedAdminInfo');
@@ -83,9 +85,9 @@ class AdminsController extends Controller
             'LoggedAdminInfo' => $LoggedAdminInfo
         ]);
     }
-    
-    
-    
+
+
+
     public function check(Request $request)
     {
         $request->validate([
@@ -121,11 +123,8 @@ class AdminsController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-    
 
-    
- 
- 
+
     public function logout()
     {
         if (Session::has('LoggedAdminInfo')) {
@@ -178,6 +177,8 @@ class AdminsController extends Controller
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
+
+
     public function edit()
     {
         $adminId = session('LoggedAdminInfo');
@@ -192,6 +193,8 @@ class AdminsController extends Controller
         ]);
     }
 
+
+
     public function profile()
     {
         $adminId = session('LoggedAdminInfo');
@@ -205,16 +208,19 @@ class AdminsController extends Controller
             'LoggedAdminInfo' => $LoggedAdminInfo,
         ]);
     }
+
+
+
     public function save(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins',
             'password' => 'required|string|min:8|regex:/^\S*$/',
-         ], [
+        ], [
             'email.unique' => 'This email is already registered.',
             'password.min' => 'Password must be at least 8 characters long.',
-             'picture.max' => 'Profile picture size must be less than 2MB.',
+            'picture.max' => 'Profile picture size must be less than 2MB.',
         ]);
 
         $adminData = [
@@ -223,7 +229,6 @@ class AdminsController extends Controller
             'password' => Hash::make($request->password),
         ];
 
-        
         Admin::create($adminData);
 
         return redirect()->route('admin.login')->with('success', 'Admin created successfully!');

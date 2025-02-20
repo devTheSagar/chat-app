@@ -37,7 +37,7 @@
                             <h4>New here?</h4>
                             <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                             @if (session('success'))
-                            <div>{{ session('success') }}</div>
+                                <div>{{ session('success') }}</div>
                             @endif
                             <form action="{{ route('user.save') }}" method="POST">
                                 @csrf
@@ -73,7 +73,7 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/vendors/js/vendor.bundle.base.js"></script>

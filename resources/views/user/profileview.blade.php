@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -72,17 +71,17 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                                    <h3 class="font-weight-bold">Welcome @if($LoggedUserInfo)
-                                        <span>{{ $LoggedUserInfo ['name'] }}</span>
+                                    <h3 class="font-weight-bold">Welcome @if ($LoggedUserInfo)
+                                            <span>{{ $LoggedUserInfo['name'] }}</span>
                                         @endif
                                     </h3>
                                     <h6 class="font-weight-normal mb-0">All systems are running smoothly! </h6>
                                 </div>
                                 @if (session('success'))
-                    <div class="alert alert-success fade show" role="alert">
-                        <strong>Success:</strong> {{ session('success') }}
-                    </div>
-                    @endif
+                                    <div class="alert alert-success fade show" role="alert">
+                                        <strong>Success:</strong> {{ session('success') }}
+                                    </div>
+                                @endif
                                 <br>
                                 <div class="col-md-12 mt-4 grid-margin">
                                     <div class="card">
@@ -96,24 +95,25 @@
                                                     <p><strong>Email:</strong> {{ $LoggedUserInfo->email }}</p>
                                                     <p><strong>Phone:</strong> {{ $LoggedUserInfo->phone_number }}</p>
                                                     <p><strong>Phone:</strong> {{ $LoggedUserInfo->role }}</p>
-                                                   
-                                                    <p><strong>Account Created At :</strong> {{ $LoggedUserInfo->created_at}}</p>
 
-                                                    
-                                                    <p><strong>Bio:</strong> {{ $LoggedUserInfo->bio}}</p>
+                                                    <p><strong>Account Created At :</strong>
+                                                        {{ $LoggedUserInfo->created_at }}</p>
 
-                                                        <!-- Add more fields as needed -->
+
+                                                    <p><strong>Bio:</strong> {{ $LoggedUserInfo->bio }}</p>
+
+                                                    <!-- Add more fields as needed -->
                                                 </div>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <div class="col-md-3 ">
                                                     <!-- Display user image with a smaller size -->
-                                                    @if($LoggedUserInfo->picture)
-                                                    <img src="{{ asset('storage/' . $LoggedUserInfo->picture) }}"
-                                                        alt="Profile Picture" class="img-fluid rounded"
-                                                        style="width: 150px; height: 150px;">
+                                                    @if ($LoggedUserInfo->picture)
+                                                        <img src="{{ asset('storage/' . $LoggedUserInfo->picture) }}"
+                                                            alt="Profile Picture" class="img-fluid rounded"
+                                                            style="width: 150px; height: 150px;">
                                                     @else
-                                                    <p class="text-muted">No profile picture available</p>
+                                                        <p class="text-muted">No profile picture available</p>
                                                     @endif
                                                 </div>
                                             </div>
@@ -153,33 +153,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
         <script>
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
 
-        var pusher = new Pusher('b23d71886d55f985f153', {
-            cluster: 'ap2'
-        });
+            var pusher = new Pusher('b23d71886d55f985f153', {
+                cluster: 'ap2'
+            });
 
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('form-submitted', function(data) {
-            // Check if 'post' property exists and contains 'author' and 'title'
-            if (data && data.post && data.post.author && data.post.title) {
-                // Display a Toastr notification (sticky)
-                toastr.success('New Post Created', 'Author: ' + data.post.author + '<br>Title: ' + data.post
-                    .title, {
-                        timeOut: 0, // Set timeOut to 0 for a sticky notification
-                        extendedTimeOut: 0, // Set extendedTimeOut to 0 for a sticky notification
-                    });
-            } else {
-                console.error('Invalid data structure received:', data);
-            }
-        });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('form-submitted', function(data) {
+                // Check if 'post' property exists and contains 'author' and 'title'
+                if (data && data.post && data.post.author && data.post.title) {
+                    // Display a Toastr notification (sticky)
+                    toastr.success('New Post Created', 'Author: ' + data.post.author + '<br>Title: ' + data.post
+                        .title, {
+                            timeOut: 0, // Set timeOut to 0 for a sticky notification
+                            extendedTimeOut: 0, // Set extendedTimeOut to 0 for a sticky notification
+                        });
+                } else {
+                    console.error('Invalid data structure received:', data);
+                }
+            });
         </script>
         <!-- plugins:js -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        
+
 
         <!-- plugins:js -->
         <script src="/vendors/js/vendor.bundle.base.js"></script>
@@ -205,6 +205,3 @@
 </body>
 
 </html>
-
-
-

@@ -33,7 +33,8 @@
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
                                 <img src="/images/logo.svg" alt="logo">
-                            </div> @if (session('success'))
+                            </div>
+                            @if (session('success'))
                                 <div class="alert alert-success">
                                     {{ session('success') }}
                                 </div>
@@ -51,27 +52,27 @@
                                 </div>
                             @endif
                             <form action="{{ route('admin.check') }}" method="POST">
-    @csrf
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+                                @csrf
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
 
 
                             <div class="text-center mt-4 font-weight-light">
-    Don't have an account? <a href="/admin/register" class="text-primary">Create</a>
-</div>
-<div class="text-center mt-2">
-    <a   class="text-primary">
-        <i class="fas fa-lock"></i> Forgot Password?
-    </a>
-</div>
+                                Don't have an account? <a href="/admin/register" class="text-primary">Create</a>
+                            </div>
+                            <div class="text-center mt-2">
+                                <a class="text-primary">
+                                    <i class="fas fa-lock"></i> Forgot Password?
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -87,7 +88,7 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/vendors/js/vendor.bundle.base.js"></script>

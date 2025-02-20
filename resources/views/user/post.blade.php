@@ -9,47 +9,48 @@
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
-    body {
-        background-color: #f8f9fa;
-    }
+        body {
+            background-color: #f8f9fa;
+        }
 
-    .container {
-        margin-top: 50px;
-    }
+        .container {
+            margin-top: 50px;
+        }
 
-    .card {
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .card-header {
-        background-color: #007bff;
-        color: white;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
 
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-    }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
 
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
 
-    .profile-pic {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">@if (session('status'))
+    <div class="container">
+        @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
@@ -71,14 +72,15 @@
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
-                                <tr>
-                                    <td><img src="{{ asset('storage/' . $user->picture) }}" alt="{{ $user->name }}"
-                                            class="profile-pic"></td>
-                                    <td>{{ $user->name }}</td>
-                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#messageModal"
-                                            data-user-id="{{ $user->id }}" data-user-name="{{ $user->name }}">Send
-                                            Message</button></td>
-                                </tr>
+                                    <tr>
+                                        <td><img src="{{ asset('storage/' . $user->picture) }}"
+                                                alt="{{ $user->name }}" class="profile-pic"></td>
+                                        <td>{{ $user->name }}</td>
+                                        <td><button class="btn btn-primary" data-toggle="modal"
+                                                data-target="#messageModal" data-user-id="{{ $user->id }}"
+                                                data-user-name="{{ $user->name }}">Send
+                                                Message</button></td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -106,8 +108,7 @@
                         <input type="hidden" name="user_id" id="modalUserId">
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="3"
-                                placeholder="Enter your message"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter your message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
@@ -121,16 +122,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-    $('#messageModal').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget);
-        var userId = button.data('user-id');
-        var userName = button.data('user-name');
-        var modal = $(this);
-        modal.find('.modal-title').text('Send Message to ' + userName);
-        modal.find('#modalUserId').val(userId);
-    });
+        $('#messageModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var userId = button.data('user-id');
+            var userName = button.data('user-name');
+            var modal = $(this);
+            modal.find('.modal-title').text('Send Message to ' + userName);
+            modal.find('#modalUserId').val(userId);
+        });
     </script>
 </body>
 
 </html>
-

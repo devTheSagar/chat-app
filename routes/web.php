@@ -12,10 +12,6 @@ Route::get('/', function () {
 
 
 
-
-
-
-
 Route::post('/user/save', [UsersController::class, 'save'])->name('user.save');
 Route::post('/user/check', [UsersController::class, 'check'])->name('user.check');
 Route::get('/user/logout', [UsersController::class, 'logout'])->name('user.logout');
@@ -28,13 +24,6 @@ Route::get('/user/profileedit', [UsersController::class, 'edit'])->name('user.pr
 Route::get('/user/chats', [UsersController::class, 'chats'])->name('user.chats');
 Route::put('/user/updateProfile', [UsersController::class, 'updateProfile'])->name('user.updateProfile');
 Route::get('/user/dashboard', [UsersController::class, 'dashboard'])->name('user.dashboard');
-
-
-
-
-
-
-
 
 
 

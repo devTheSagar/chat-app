@@ -1,6 +1,3 @@
-
-
-
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
@@ -22,23 +19,21 @@
                 </ul>
             </div>
         </li>
-        
 
-        
+
+
         <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="true" aria-controls="auth">
-        <i class="fas fa-comments menu-icon"></i>
-        <span class="menu-title">Chat</span>
-         </a>
-    <div class="collapse show" id="auth">
-        <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/chats">Chats</a></li>
-        </ul>
-    </div>
-</li>
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="true" aria-controls="auth">
+                <i class="fas fa-comments menu-icon"></i>
+                <span class="menu-title">Chat</span>
+            </a>
+            <div class="collapse show" id="auth">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/admin/chats">Chats</a></li>
+                </ul>
+            </div>
+        </li>
 
-       <!-- #endregion -->
+        <!-- #endregion -->
     </ul>
 </nav>
-
-

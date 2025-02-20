@@ -1,6 +1,3 @@
-
-
-
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
@@ -23,20 +20,19 @@
             </div>
         </li>
         <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#chat-support" aria-expanded="false" aria-controls="chat-support">
-        <i class="fas fa-comments menu-icon"></i>
-        <span class="menu-title">Chat Support</span>
-        <i class="menu-arrow"></i>
-    </a>
-    <div class="collapse" id="chat-support">
-        <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/user/chats">Chat Support</a></li>
-        </ul>
-    </div>
-</li>
+            <a class="nav-link" data-toggle="collapse" href="#chat-support" aria-expanded="false"
+                aria-controls="chat-support">
+                <i class="fas fa-comments menu-icon"></i>
+                <span class="menu-title">Chat Support</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="chat-support">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/user/chats">Chat Support</a></li>
+                </ul>
+            </div>
+        </li>
 
-        
+
     </ul>
 </nav>
-
-

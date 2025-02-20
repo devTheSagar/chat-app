@@ -37,25 +37,25 @@
                             <h4>New here?</h4>
                             <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                             @if (session('success'))
-                            <div>{{ session('success') }}</div>
+                                <div>{{ session('success') }}</div>
                             @endif
                             <form action="{{ route('admin.save') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Password (min. 8 characters)</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+                                @csrf
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password (min. 8 characters)</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
 
 
                             <div class="text-center mt-4 font-weight-light">
@@ -75,7 +75,7 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/vendors/js/vendor.bundle.base.js"></script>

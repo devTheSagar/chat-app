@@ -14,6 +14,9 @@ class Chat extends Model
         return $this->belongsTo(User::class, 'sender_id');
     }
 
+
+
+    
     // Relationship to get receiver profile
     public function receiver()
     {

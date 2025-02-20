@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -73,10 +72,9 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                                    <h3 class="font-weight-bold">Welcome @if($LoggedAdminInfo)
-                                        <span>{{ $LoggedAdminInfo ['name'] }}</span>
-                                        <span class="badge badge-primary">{{ $LoggedAdminInfo ['role'] }}</span>
-
+                                    <h3 class="font-weight-bold">Welcome @if ($LoggedAdminInfo)
+                                            <span>{{ $LoggedAdminInfo['name'] }}</span>
+                                            <span class="badge badge-primary">{{ $LoggedAdminInfo['role'] }}</span>
                                         @endif
                                     </h3>
 
@@ -90,7 +88,8 @@
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card tale-bg">
                                 <div class="card-people mt-auto">
-                                <img src="/images/dashboard/people.svg" alt="people">                                <div class="weather-info">
+                                    <img src="/images/dashboard/people.svg" alt="people">
+                                    <div class="weather-info">
                                         <div class="d-flex">
 
 
@@ -170,7 +169,8 @@
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
                                 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
                                     template</a> from BootstrapDash. All rights reserved.</span>
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &
+                                made
                                 with <i class="ti-heart text-danger ml-1"></i></span>
                         </div>
                     </footer>
@@ -184,7 +184,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        
+
 
         <!-- plugins:js -->
         <script src="/vendors/js/vendor.bundle.base.js"></script>
@@ -210,8 +210,3 @@
 </body>
 
 </html>
-
-
-
-
-
