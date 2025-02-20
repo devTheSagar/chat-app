@@ -32,14 +32,14 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="/images/logo.svg" alt="logo">
+                                {{-- <img src="/images/logo.svg" alt="logo"> --}}
                             </div>
                             @if (session('success'))
                                 <div class="alert alert-success">
                                     {{ session('success') }}
                                 </div>
                             @endif
-                            <h4>Hello! let's get started</h4>
+                            <h4>Hello! let's login to start chat with sagor</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
 
                             @if ($errors->any())
@@ -65,14 +65,14 @@
                             </form>
 
 
-                            <div class="text-center mt-4 font-weight-light">
+                            {{-- <div class="text-center mt-4 font-weight-light">
                                 Don't have an account? <a href="/user/register" class="text-primary">Create</a>
                             </div>
                             <div class="text-center mt-2">
                                 <a class="text-primary">
                                     <i class="fas fa-lock"></i> Forgot Password?
                                 </a>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
